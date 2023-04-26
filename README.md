@@ -1,4 +1,4 @@
-# speakAndEar_web_api
+# speakAndListen_web_api
 The system needs to be started with a user action, such as a click.
 
 To make the system to speak, just use speak("your text here");
