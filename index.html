@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speak and Ear</title>
+</head>
+<body>
+Click the window to start.
+<script src="speak.js"></script>
+<script src="ear.js"></script>
+<script>
+    window.onclick = function () {
+        speak("Hello! How are you?");
+    }
+    afterSpeaking = function (txtSaid) {
+        recognition.start();
+    }
+    afterEaring = function (txtRecognised) {
+        recognition.stop();
+        speak(txtRecognised);
+    }
+</script>
+
+</body>
+</html>
