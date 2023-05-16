@@ -8,7 +8,7 @@ To make the system listen just call recognition.start();
 The function "afterListening" is called  after the system has finished listening
 
 ------------------------------------
-EXAMPLE: (refer to index.html)
+BASIC EXAMPLE: (refer to basic/index.html)
 
 //need to use a user action to start
 window.onclick = function () {
@@ -26,3 +26,10 @@ afterListening = function (txtRecognised) {
   recognition.stop();
   speak(txtRecognised);
 }
+
+------------------------------------
+DIALOG JSON EXAMPLE: (refer to dialogue_json/index.html)
+
+Use the file answersAndResponses.js to structure the dialogue.
+Click on the screen to start
+
