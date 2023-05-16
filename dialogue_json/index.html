@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Speak and Ear</title>
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
+    <script src="assets/libs/p5.min.js"></script>
+    <script src="assets/libs/p5.serialport.js"></script>
+    <script src="assets/libs/speak.js"></script>
+    <script src="assets/libs/listen.js"></script>
+    <script src="answersAndResponses.js"></script>
+</head>
+<body>
+<script>
+    //comunicacao
+    window.onclick = function () {
+        recognition.start();
+    }
+    afterSpeaking = function (txtSaid) {
+        recognition.start();
+    }
+    startedHearingSomething = function () {
+
+    }
+    afterListening = function (txtRecognised) {
+        recognition.stop();
+
+        if (currentState) {
+            let response = answersAndResponses[currentState][txtRecognised] || answersAndResponses[currentState]["###"];
+            currentState = response.nextState;
+            currentResponse = response;
+            let randomResponse = randomArrayItem(response.speak);
+            speak(randomResponse);
+        } else console.log("there are no more states")
+    }
+
+    heardNothingForALong = function () {
+        let randomRepeat = randomArrayItem(currentResponse.repeat);
+        if(randomRepeat) {
+            recognition.stop();
+            speak(randomRepeat);
+        }
+    }
+
+    forEveryCount = function () {
+        console.log("started", timeSinceStarted, "waited", timeWaitingForSpeech, "StartedSpeaking", timeSinceUserStartedSpeaking,);
+    }
+
+    //desenhar
+    function preload(){
+    }
+    function setup(){
+    }
+    function draw(){
+    }
+
+
+</script>
+</body>
+</html>

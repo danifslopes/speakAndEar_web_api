@@ -1,0 +1,38 @@
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Styles the whole slider*/
+.slider{
+    /* Removes some defaults*/
+    -webkit-appearance: none;
+}
+
+
+/* This is the "track" that the slider sits on  */
+.slider::-webkit-slider-runnable-track {
+    background: #E6E6E6;
+    border-radius: 25px;
+    height: 5px;
+   /*-webkit-appearance: none;*/
+
+    /* Turns the cursor into the hand pointer icon when hovering over the slider  */
+    cursor: pointer;
+
+}
+/*bola do slider*/
+.slider::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: black;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+    -webkit-appearance: none; /*tirar o azul*/
+
+    /*posicionamento da bola*/
+    margin-top: -6px;
+    border-radius: 10px;
+}
